@@ -1,16 +1,76 @@
-# React + Vite
+# OOP Study App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikácia na štúdium OOP (Object-Oriented Programming) a návrhových vzorov.
 
-Currently, two official plugins are available:
+## Požiadavky
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v18+)
+- npm
 
-## React Compiler
+## Inštalácia
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd oop-study-app
+npm install
+```
 
-## Expanding the ESLint configuration
+## Spustenie
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev
+```
+
+Aplikácia bude dostupná na `http://localhost:5173/` (alebo inom porte ak je 5173 obsadený).
+
+## Dátové súbory
+
+**DÔLEŽITÉ:** Aplikácia vyžaduje dátové súbory, ktoré nie sú súčasťou repozitára.
+
+### Potrebné súbory:
+
+1. **`app_data.json`** - hlavný dátový súbor (v `public/` priečinku)
+2. **`oop-data/`** - priečinok s OOP materiálmi (v `public/` priečinku)
+
+### Ako získať dátové súbory:
+
+Kontaktujte autora projektu pre získanie súborov `app_data.json` a priečinka `oop-data`.
+
+## Štruktúra projektu
+
+```
+oop-study-app/
+├── public/
+│   ├── app_data.json          # Vyžiadať od autora
+│   └── oop-data/              # Vyžiadať od autora
+│       ├── Behavioral Patterns/
+│       ├── Creational Patterns/
+│       ├── Structural Patterns/
+│       ├── abstractfactory/
+│       ├── adapter/
+│       ├── builder/
+│       ├── chain/
+│       ├── composite/
+│       ├── decorator/
+│       ├── facade/
+│       ├── factorymethod/
+│       ├── iterator/
+│       ├── observer/
+│       ├── prototype/
+│       ├── proxy/
+│       ├── singleton/
+│       ├── strategy/
+│       ├── visitor/
+│       └── ... (PDF a DOCX súbory s teóriou)
+├── src/
+├── package.json
+└── vite.config.js
+```
+
+## Príkazy
+
+| Príkaz | Popis |
+|--------|-------|
+| `npm install` | Inštalácia závislostí |
+| `npm run dev` | Spustenie vývojového servera |
+| `npm run build` | Build pre produkciu |
+| `npm run preview` | Náhľad produkčného buildu |
