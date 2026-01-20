@@ -1,0 +1,61 @@
+[OOP-Skúška]
+Praktická èas - viacmenej to isté, èo tu bolo uploadnuté dole, ale netreba sa bá, iadne diagramy kresli nebudete, iba kódi. Skupina, èo mala o 8.00 dostala navrhovı vzor Visitor (ve¾mi podobná implementácia ako tá, èo bola na prednáške).
+Test - iadne teoretické veci tam neboli, avšak treba vedie èíta z kódu a hlavne si pozrie Exceptiony a ich názvy (ktorı exception na èo slúi), aby ste vedeli, ktorı z nich sa vyvolá. Kompletne si precvièi dediènos pre priraïovanie premennıch, napr.
+interface A;
+class B;
+class C extends B implements A;
+class D implements A;
+B b = new B();
+C c = new C();
+D d = new D();
+a ktore z tychto je mone poui:
+A a = b;
+c = d;
+d = c;
+c = b;
+Potom otázky oh¾adom throws exception a ich overridovania pri zdedení:
+Trieda A
+Trieda B extends A
+Exception E1; (je potomok triedy Exception);
+Exception E2; (je potomok triedy E1)
+A ma metodu:
+public ... throws E1
+a teraz, ako môe vyzera overridnuta metóda v triede B a su tam taketo monosti:
+public ... throws E1;
+public ... throws E2;
+public ... (bez throws);
+public ... throws Exception;
+potom veci ako, èi sa kod skompiluje a èi nevyhodi warning (a na ktorom riadku), napr. daèo taketo:
+List<Integer> list = new ArrayList();
+inylist = list;
+inylist2 = inylist;
+List<Integer> dalsilist = inylist2;
+a potom ešte èo si pamatam tak takyto kod:
+List<?> list = new ArrayList<String>();
+a ktore operacie je mone vykona z tychto monosti:
+list.add(null);
+list.add(2715);
+list.add("OK");
+String v1 = list.get(0);
+Object v2 = list.get(0);
+a ešte 1 na exceptions:
+public void f() {
+try {
+k = 0;
+m = 5 / k;
+} catch(ArithmeticException e) {
+printf("1"); // nechcem pisa ten dlhy println
+throws new RuntimeException();
+} catch(RuntimeException e) {
+printf("2");
+return;
+} catch(Exception e) {
+printf("3");
+} finally {
+printf("4");
+}
+printf("5");
+take tu, keï nepoznáte èo je ArithmeticException, tak môete tipova, avšak, èo sa ja divím je to, e v tomto prípade je vraj správna odpoveï:
+vypíše sa 3 a potom 5, èie zahadnym spôsobom sa finally nevykoná. IDK why.
+----
+Aby som to zhrnul, praktická èas OK, test nebol vhodnı pre predmet, kde sme sa s tım poriadne ešte nestihli zoznámi. Toto sú praktické otázky, ale pre cie¾ovú skupinu, ktorá sa pohybuje v Jave ove¾a dlhšie ako 3 mesiace a k tomu ešte dos skrytıch a nepeknıch chytákov proste.

@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Explicitly ignore
+oop-data/
+.DS_Store
+.claude/
+index.html
+
+# Except these
+!.gitignore
+!app_data.json
+!oop-study-app/
+!oop-study-app/**
